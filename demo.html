@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Company Demo — Interactive</title>
+<style>
+  :root { --bg:#0a0a0a; --surface:#141414; --fg:#f5f5f5; --muted:#a0a0a0; --accent:#3b82f6; --accent2:#10b981; --bad:#ef4444; --warn:#f59e0b; --line:#2a2a2a; --r:12px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--fg); min-height:100vh; }
+  .container { max-width:1200px; margin:0 auto; padding:40px 20px; }
+  h1 { font-size:2.5rem; margin-bottom:8px; }
+  .subtitle { color:var(--muted); font-size:1.2rem; margin-bottom:30px; }
+  .status { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:var(--surface); border:1px solid var(--line); border-radius:8px; font-size:0.9rem; margin-bottom:30px; }
+  .dot { width:8px; height:8px; border-radius:50%; }
+  .dot.on { background:var(--accent2); }
+  .dot.off { background:var(--bad); }
+  .roles { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin-bottom:30px; }
+  .role { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px; cursor:pointer; transition:all .2s; }
+  .role:hover { border-color:var(--accent); transform:translateY(-2px); }
+  .role.active { border-color:var(--accent); background:#1a2332; }
+  .role h3 { font-size:1.2rem; margin-bottom:4px; }
+  .role p { font-size:0.9rem; color:var(--muted); }
+  .role .model { font-size:0.8rem; color:var(--accent2); margin-top:8px; }
+  .demo { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px; }
+  .demo h2 { font-size:1.5rem; margin-bottom:16px; color:var(--accent); }
+  .demo textarea { width:100%; height:120px; background:var(--bg); border:1px solid var(--line); border-radius:8px; color:var(--fg); padding:12px; font-size:1rem; resize:vertical; }
+  .demo button { background:var(--accent); color:#fff; border:none; padding:12px 24px; border-radius:8px; font-size:1rem; cursor:pointer; margin-top:12px; }
+  .demo button:hover { background:#2563eb; }
+  .demo button:disabled { opacity:0.5; cursor:not-allowed; }
+  .result { margin-top:20px; padding:20px; background:var(--bg); border:1px solid var(--line); border-radius:8px; white-space:pre-wrap; font-size:0.95rem; line-height:1.6; min-height:100px; }
+  .result .source { font-size:0.8rem; color:var(--muted); margin-top:12px; }
+  .nav { display:flex; gap:10px; margin-bottom:20px; }
+  .nav a { color:var(--accent); text-decoration:none; padding:8px 16px; border:1px solid var(--line); border-radius:8px; }
+  .nav a:hover { background:var(--surface); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a href="index.html">← Presentation</a>
+    <a href="demo.html">Demo</a>
+  </div>
+  <h1>AI Company Demo</h1>
+  <p class="subtitle">Select a role, describe a task, and see how AI handles it.</p>
+  <div class="status" id="status"><span class="dot" id="dot"></span><span id="statusText">Checking...</span></div>
+  <div class="roles" id="roles"></div>
+  <div class="demo" id="demo" style="display:none;">
+    <h2 id="demoTitle"></h2>
+    <textarea id="input" placeholder="Describe the task..."></textarea>
+    <button id="btn" onclick="process()">Process with AI</button>
+    <div class="result" id="result">Result will appear here...</div>
+  </div>
+</div>
+<script>
+  let selectedRole = null;
+  const roles = [
+    { id:"hr", name:"HR & Recruiting", desc:"Resume screening, candidate ranking, onboarding", model:"Qwen 3 8B" },
+    { id:"receptionist", name:"Receptionist", desc:"Visitor check-in, scheduling, FAQ, phone routing", model:"Llama 3.3 8B" },
+    { id:"quote", name:"Quote Generator", desc:"Auto-generate quotes from customer requests", model:"Qwen 3 8B" },
+    { id:"bookkeeper", name:"Bookkeeper", desc:"Invoice processing, expense categorization, tax prep", model:"Mistral 7B" },
+    { id:"support", name:"Customer Support", desc:"Ticket triage, FAQ, escalation routing", model:"Gemma 3 9B" },
+    { id:"legal", name:"Legal Assistant", desc:"Contract review, NDA generation, compliance", model:"DeepSeek R1 8B" },
+    { id:"marketing", name:"Marketing", desc:"Content, social posts, SEO copy", model:"Qwen 3 8B" },
+    { id:"helpdesk", name:"IT Helpdesk", desc:"Troubleshooting, ticket routing, password resets", model:"Llama 3.3 8B" },
+  ];
+
+  async function checkStatus() {
+    try {
+      const r = await fetch("/api/status");
+      const d = await r.json();
+      const dot = document.getElementById("dot");
+      const txt = document.getElementById("statusText");
+      if (d.ollama) {
+        dot.className = "dot on";
+        txt.textContent = "Ollama connected — real AI mode";
+      } else {
+        dot.className = "dot off";
+        txt.textContent = "Ollama not available — demo mode (mock responses)";
+      }
+    } catch {
+      document.getElementById("dot").className = "dot off";
+      document.getElementById("statusText").textContent = "Server offline";
+    }
+  }
+
+  function renderRoles() {
+    const container = document.getElementById("roles");
+    container.innerHTML = roles.map(r => `
+      <div class="role" onclick="selectRole('${r.id}')" id="role-${r.id}">
+        <h3>${r.name}</h3>
+        <p>${r.desc}</p>
+        <div class="model">${r.model}</div>
+      </div>
+    `).join("");
+  }
+
+  function selectRole(id) {
+    document.querySelectorAll(".role").forEach(r => r.classList.remove("active"));
+    document.getElementById("role-" + id).classList.add("active");
+    selectedRole = id;
+    const role = roles.find(r => r.id === id);
+    document.getElementById("demoTitle").textContent = role.name;
+    document.getElementById("demo").style.display = "block";
+    document.getElementById("input").placeholder = `Describe a ${role.name.toLowerCase()} task...`;
+    document.getElementById("result").textContent = "Result will appear here...";
+  }
+
+  async function process() {
+    const input = document.getElementById("input").value.trim();
+    if (!input || !selectedRole) return;
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    btn.disabled = true;
+    result.textContent = "Processing...";
+    try {
+      const r = await fetch("/api/process", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ role: selectedRole, input }),
+      });
+      const d = await r.json();
+      if (d.error) {
+        result.textContent = "Error: " + d.error;
+      } else {
+        result.textContent = d.response + "\n\n— Source: " + d.source + " (" + d.model + ")";
+      }
+    } catch (e) {
+      result.textContent = "Error: " + e.message;
+    }
+    btn.disabled = false;
+  }
+
+  checkStatus();
+  renderRoles();
+</script>
+</body>
+</html>

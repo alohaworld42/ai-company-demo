@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Powered Company — Replace & Augment Every Role</title>
+<style>
+  :root { --bg:#0a0a0a; --surface:#141414; --fg:#f5f5f5; --muted:#a0a0a0; --accent:#3b82f6; --accent2:#10b981; --bad:#ef4444; --warn:#f59e0b; --line:#2a2a2a; --r:12px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--fg); overflow:hidden; height:100vh; }
+  .slide { display:none; width:100%; height:100vh; padding:60px 80px; flex-direction:column; justify-content:center; }
+  .slide.active { display:flex; }
+  .slide h1 { font-size:3.2rem; font-weight:700; margin-bottom:20px; line-height:1.1; }
+  .slide h2 { font-size:2.4rem; font-weight:600; margin-bottom:16px; color:var(--accent); }
+  .slide h3 { font-size:1.6rem; font-weight:500; margin-bottom:12px; color:var(--accent2); }
+  .slide p { font-size:1.3rem; line-height:1.6; color:var(--muted); max-width:900px; }
+  .slide ul { list-style:none; margin:20px 0; }
+  .slide li { font-size:1.3rem; padding:8px 0; padding-left:28px; position:relative; }
+  .slide li::before { content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700; }
+  .slide .grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:20px; }
+  .slide .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px; }
+  .slide .card h3 { margin-bottom:8px; }
+  .slide .card p { font-size:1.1rem; }
+  .slide .big { font-size:5rem; font-weight:800; color:var(--accent); }
+  .slide .stat { display:flex; gap:40px; margin-top:30px; }
+  .slide .stat .item { text-align:center; }
+  .slide .stat .item .num { font-size:3rem; font-weight:700; color:var(--accent2); }
+  .slide .stat .item .label { font-size:1rem; color:var(--muted); margin-top:4px; }
+  .slide table { width:100%; border-collapse:collapse; margin-top:20px; }
+  .slide th, .slide td { padding:12px 16px; text-align:left; border-bottom:1px solid var(--line); }
+  .slide th { color:var(--accent); font-weight:600; }
+  .slide .highlight { color:var(--accent2); font-weight:700; }
+  .slide .warn { color:var(--warn); }
+  .slide .bad { color:var(--bad); }
+  .nav { position:fixed; bottom:20px; right:30px; display:flex; gap:10px; z-index:10; }
+  .nav button { background:var(--surface); border:1px solid var(--line); color:var(--fg); padding:8px 16px; border-radius:8px; cursor:pointer; font-size:1rem; }
+  .nav button:hover { background:var(--accent); border-color:var(--accent); }
+  .counter { position:fixed; bottom:20px; left:30px; color:var(--muted); font-size:0.9rem; }
+  .logo { position:fixed; top:20px; right:30px; color:var(--muted); font-size:0.9rem; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+  <h1>AI-Powered Company</h1>
+  <h2>Replace & Augment Every Role with Local LLMs</h2>
+  <p>Run the latest open-source models on your own hardware. No cloud. No API keys. No data leaves your company.</p>
+  <div class="stat">
+    <div class="item"><div class="num">8</div><div class="label">Roles Covered</div></div>
+    <div class="item"><div class="num">€0</div><div class="label">Monthly AI Cost</div></div>
+    <div class="item"><div class="num">100%</div><div class="label">Data Privacy</div></div>
+    <div class="item"><div class="num">24/7</div><div class="label">Availability</div></div>
+  </div>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+  <h2>The Problem</h2>
+  <p>Small and medium businesses spend 60-70% of revenue on personnel. Most of these roles involve repetitive tasks that AI can handle today.</p>
+  <ul>
+    <li>Receptionist: greeting, scheduling, FAQ — 40h/week</li>
+    <li>HR Assistant: resume screening, onboarding docs — 20h/week</li>
+    <li>Bookkeeper: invoice processing, categorization — 15h/week</li>
+    <li>Customer Support: ticket triage, FAQ — 30h/week</li>
+    <li>Quote Generator: reading requests, creating estimates — 10h/week</li>
+  </ul>
+  <p class="highlight">Total: ~115 hours/week of automatable work</p>
+</div>
+
+<!-- Slide 3: The Solution -->
+<div class="slide">
+  <h2>The Solution: Local AI</h2>
+  <p>Run open-source LLMs on a single GPU. No cloud. No subscriptions. No data leaves your building.</p>
+  <div class="grid">
+    <div class="card"><h3>Hardware</h3><p>One RTX 4060 (8GB) — €400 one-time. Runs 8B-14B models at 30+ tokens/sec.</p></div>
+    <div class="card"><h3>Models</h3><p>Qwen 3, Llama 3.3, Mistral, Gemma 3, DeepSeek R1 — all open source, all local.</p></div>
+    <div class="card"><h3>Privacy</h3><p>100% on-premise. GDPR-compliant by design. No vendor lock-in.</p></div>
+    <div class="card"><h3>Cost</h3><p>€0/month after hardware. Electricity ~€20/month. Compare to €13,000/month in salaries.</p></div>
+  </div>
+</div>
+
+<!-- Slide 4: Roles -->
+<div class="slide">
+  <h2>Roles We Replace & Augment</h2>
+  <table>
+    <tr><th>Role</th><th>AI Task</th><th>Model</th><th>Impact</th></tr>
+    <tr><td>Receptionist</td><td>Visitor check-in, scheduling, FAQ, phone routing</td><td>Llama 3.3 8B</td><td class="highlight">Replace</td></tr>
+    <tr><td>HR Assistant</td><td>Resume screening, candidate ranking, onboarding docs</td><td>Qwen 3 8B</td><td class="highlight">Augment</td></tr>
+    <tr><td>Bookkeeper</td><td>Invoice processing, expense categorization, tax prep</td><td>Mistral 7B</td><td class="highlight">Augment</td></tr>
+    <tr><td>Customer Support</td><td>Ticket triage, FAQ, escalation routing</td><td>Gemma 3 9B</td><td class="highlight">Augment</td></tr>
+    <tr><td>Quote Generator</td><td>Auto-generate quotes from customer requests</td><td>Qwen 3 8B</td><td class="highlight">Augment</td></tr>
+    <tr><td>Legal Assistant</td><td>Contract review, NDA generation, compliance</td><td>DeepSeek R1 8B</td><td class="highlight">Augment</td></tr>
+    <tr><td>Marketing</td><td>Content, social posts, SEO copy</td><td>Qwen 3 8B</td><td class="highlight">Augment</td></tr>
+    <tr><td>IT Helpdesk</td><td>Troubleshooting, ticket routing, password resets</td><td>Llama 3.3 8B</td><td class="highlight">Augment</td></tr>
+  </table>
+</div>
+
+<!-- Slide 5: Cost Comparison -->
+<div class="slide">
+  <h2>Cost Comparison (Monthly)</h2>
+  <table>
+    <tr><th>Role</th><th>Human (AT)</th><th>AI (Local)</th><th>Savings</th></tr>
+    <tr><td>Receptionist</td><td>€2,500</td><td class="highlight">€0</td><td class="highlight">100%</td></tr>
+    <tr><td>HR Assistant</td><td>€3,000</td><td class="highlight">€0</td><td class="highlight">100%</td></tr>
+    <tr><td>Bookkeeper</td><td>€2,800</td><td class="highlight">€0</td><td class="highlight">100%</td></tr>
+    <tr><td>Customer Support</td><td>€2,500</td><td class="highlight">€0</td><td class="highlight">100%</td></tr>
+    <tr><td>Quote Generator</td><td>€2,200</td><td class="highlight">€0</td><td class="highlight">100%</td></tr>
+    <tr style="border-top:2px solid var(--accent)"><td><strong>Total (5 roles)</strong></td><td><strong>€13,000</strong></td><td class="highlight"><strong>€0</strong></td><td class="highlight"><strong>100%</strong></td></tr>
+  </table>
+  <p style="margin-top:20px;">Hardware: one-time ~€2,000 (RTX 4060 8GB). Electricity: ~€20/month. Break-even: < 1 month.</p>
+</div>
+
+<!-- Slide 6: Demo -->
+<div class="slide">
+  <h2>Live Demo</h2>
+  <p>See it in action: <span class="highlight">http://127.0.0.1:4800</span></p>
+  <div class="grid">
+    <div class="card"><h3>HR Resume Screener</h3><p>Paste a job description + resume → get ranked candidates with reasoning.</p></div>
+    <div class="card"><h3>Receptionist Bot</h3><p>Chat with the AI receptionist: schedule appointments, answer FAQs, route calls.</p></div>
+    <div class="card"><h3>Quote Generator</h3><p>Describe a customer request → get a complete quote with line items and pricing.</p></div>
+    <div class="card"><h3>Invoice Processor</h3><p>Upload an invoice → get categorized expenses + tax summary.</p></div>
+  </div>
+</div>
+
+<!-- Slide 7: Architecture -->
+<div class="slide">
+  <h2>Architecture</h2>
+  <div class="grid">
+    <div class="card"><h3>Local LLM Server</h3><p>Ollama — runs Qwen 3, Llama 3.3, Mistral, Gemma 3, DeepSeek on your GPU/CPU.</p></div>
+    <div class="card"><h3>Application Layer</h3><p>Node.js/Python backend + React frontend. Connects to Ollama via REST API.</p></div>
+    <div class="card"><h3>Data Layer</h3><p>PostgreSQL/SQLite for structured data. All data stays local.</p></div>
+    <div class="card"><h3>Integration</h3><p>REST API for existing systems. Webhooks for events. No vendor lock-in.</p></div>
+  </div>
+</div>
+
+<!-- Slide 8: Implementation Roadmap -->
+<div class="slide">
+  <h2>Implementation Roadmap</h2>
+  <table>
+    <tr><th>Week</th><th>Milestone</th><th>Deliverable</th></tr>
+    <tr><td>1</td><td>Infrastructure</td><td>Ollama + GPU setup, model selection</td></tr>
+    <tr><td>2</td><td>Receptionist Bot</td><td>Chat interface, FAQ, scheduling, phone routing</td></tr>
+    <tr><td>3</td><td>HR Assistant</td><td>Resume screening, candidate ranking, onboarding</td></tr>
+    <tr><td>4</td><td>Quote Generator</td><td>Auto-quote from customer requests</td></tr>
+    <tr><td>5</td><td>Bookkeeper</td><td>Invoice processing, expense categorization</td></tr>
+    <tr><td>6</td><td>Customer Support</td><td>Ticket triage, FAQ, escalation</td></tr>
+    <tr><td>7</td><td>Integration & Testing</td><td>End-to-end testing, performance tuning</td></tr>
+    <tr><td>8</td><td>Go Live</td><td>Production deployment, monitoring, training</td></tr>
+  </table>
+</div>
+
+<!-- Slide 9: Next Steps -->
+<div class="slide">
+  <h2>Next Steps</h2>
+  <ul>
+    <li>Run the demo: <code>node app/server.mjs</code> → http://127.0.0.1:4800</li>
+    <li>Install Ollama + pull models: <code>ollama pull qwen3:8b</code></li>
+    <li>Customize prompts for your industry</li>
+    <li>Integrate with your existing systems (CRM, ERP, email)</li>
+    <li>Scale: add more models, fine-tune on company data</li>
+  </ul>
+  <p class="highlight" style="margin-top:30px;">Questions? Let's talk.</p>
+</div>
+
+<div class="nav">
+  <button onclick="prev()">← Prev</button>
+  <button onclick="next()">Next →</button>
+</div>
+<div class="counter"><span id="cur">1</span> / <span id="tot">9</span></div>
+<div class="logo">AI-Powered Company</div>
+
+<script>
+  let i = 0;
+  const slides = document.querySelectorAll('.slide');
+  document.getElementById('tot').textContent = slides.length;
+  function show(n) {
+    slides[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    document.getElementById('cur').textContent = i + 1;
+  }
+  function next() { show(i + 1); }
+  function prev() { show(i - 1); }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+</script>
+</body>
+</html>
