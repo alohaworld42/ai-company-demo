@@ -58,7 +58,7 @@ node app/server.mjs
 | Quote/Estimate Generator | €2,200 | €0 | 100% |
 | **Total (5 roles)** | **€13,000** | **€0** | **100%** |
 
-*Hardware: one-time ~€2,000 for a GPU (RTX 4060 8GB) or use existing CPU. Electricity ~€20/month.*
+*Hardware: Mac Studio M4 Max (one-time). Runs 70B+ models at 20+ tokens/sec. Electricity ~€30/month.*
 
 ## License
 
