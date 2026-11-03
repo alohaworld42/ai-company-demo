@@ -39,9 +39,9 @@ node app/server.mjs
 | Role | AI Capability | Model | Replaces/Augments |
 |------|--------------|-------|-------------------|
 | HR & Recruiting | Resume screening, candidate ranking, onboarding docs | Qwen 3 8B | Augments |
-| Receptionist | €2,500 | €143 (amortized) | 94% |
+| Receptionist | Visitor check-in, appointment scheduling, FAQ, phone routing | Llama 3.3 8B | Augments |
 | Quote Generator | Auto-generate quotes from customer requests | Qwen 3 8B | Augments |
-| Bookkeeper | €2,800 | €143 (amortized) | 95% |
+| Bookkeeper | Invoice processing, expense categorization, tax prep | Mistral 7B | Augments |
 | Customer Support | Ticket triage, FAQ responses, escalation | Gemma 3 9B | Augments |
 | Legal Assistant | Contract review, NDA generation, compliance check | DeepSeek R1 8B | Augments |
 | Marketing | Content generation, social posts, SEO | Qwen 3 8B | Augments |
@@ -51,7 +51,7 @@ node app/server.mjs
 
 | Role | Human (AT, monthly) | AI (local, monthly) | Savings |
 |------|---------------------|---------------------|---------|
-| Receptionist | €2,500 | €143 (amortized) | 94% |
+| Receptionist | Visitor check-in, appointment scheduling, FAQ, phone routing | Llama 3.3 8B | Augments |
 | HR Assistant | €3,000 | €143 (amortized) | 95% |
 | Bookkeeper | €2,800 | €143 (amortized) | 95% |
 | Customer Support (1 FTE) | €2,500 | €143 (amortized) | 94% |
