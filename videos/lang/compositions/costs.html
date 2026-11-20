@@ -1,0 +1,37 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0a0a0f; color: #f5f5f5; font-family: system-ui, sans-serif; padding: 60px; }
+    h2 { font-size: 56px; color: #3b82f6; margin-bottom: 40px; opacity: 0; }
+    table { width: 100%; max-width: 1200px; border-collapse: collapse; }
+    th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid #2a2a3a; font-size: 22px; }
+    th { color: #3b82f6; font-weight: 600; }
+    .highlight { color: #10b981; font-weight: 700; }
+    .total-row { border-top: 2px solid #3b82f6; }
+    .total-row td { font-weight: 700; font-size: 24px; }
+    tr { opacity: 0; transform: translateY(10px); }
+    .note { margin-top: 30px; font-size: 20px; color: #a0a0a0; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-m18j" id="root" data-composition-id="costs" data-width="1920" data-height="1080">
+    <h2 data-hf-id="hf-jqfn">Cost Comparison (Monthly)</h2>
+    <table data-hf-id="hf-2j5r">
+      <tr data-hf-id="hf-p3r7"><th data-hf-id="hf-yivx">Role</th><th data-hf-id="hf-n7s6">Human (AT)</th><th data-hf-id="hf-wwrt">AI (amortized/mo)</th><th data-hf-id="hf-85t8">Speed</th><th data-hf-id="hf-vyz0">Savings</th></tr>
+      <tr data-hf-id="hf-ddj7"><td data-hf-id="hf-qctu">Receptionist</td><td data-hf-id="hf-g9eo">€2,500</td><td data-hf-id="hf-7apr" class="highlight">€143</td><td data-hf-id="hf-555r">30+ tok/s</td><td data-hf-id="hf-wmjt" class="highlight">94%</td></tr>
+      <tr data-hf-id="hf-cz86"><td data-hf-id="hf-kxy7">HR Assistant</td><td data-hf-id="hf-mlis">€3,000</td><td data-hf-id="hf-wydb" class="highlight">€143</td><td data-hf-id="hf-8mov">30+ tok/s</td><td data-hf-id="hf-owt9" class="highlight">94%</td></tr>
+      <tr data-hf-id="hf-ckx5"><td data-hf-id="hf-2gnm">Bookkeeper</td><td data-hf-id="hf-4nsf">€2,800</td><td data-hf-id="hf-wk2a" class="highlight">€143</td><td data-hf-id="hf-88du">30+ tok/s</td><td data-hf-id="hf-q3qc" class="highlight">94%</td></tr>
+      <tr data-hf-id="hf-c6m4"><td data-hf-id="hf-dvgm">Customer Support</td><td data-hf-id="hf-devs">€2,500</td><td data-hf-id="hf-w5r9" class="highlight">€143</td><td data-hf-id="hf-7u2t">30+ tok/s</td><td data-hf-id="hf-ppfb" class="highlight">94%</td></tr>
+      <tr data-hf-id="hf-bsb3"><td data-hf-id="hf-to7m">Quote Generator</td><td data-hf-id="hf-t3kd">€2,200</td><td data-hf-id="hf-yxwg" class="highlight">€143</td><td data-hf-id="hf-am80">30+ tok/s</td><td data-hf-id="hf-qwce" class="highlight">94%</td></tr>
+      <tr data-hf-id="hf-pltk" class="total-row"><td data-hf-id="hf-rzwo">Total (5 roles)</td><td data-hf-id="hf-cky3">€13,000</td><td data-hf-id="hf-yjlf" class="highlight">€715</td><td data-hf-id="hf-a7wz">30+ tok/s</td><td data-hf-id="hf-qi1d" class="highlight">94%</td></tr>
+    </table>
+    <div data-hf-id="hf-9b9t" class="note">Amortized incl. hardware, power, prompting time. Break-even: under 1 month.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    const rows = document.querySelectorAll("tr");
+    rows.forEach((el, i) => {
+      tl.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.6 + i * 0.15);
+    });
+    tl.fromTo(".note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 2.0);
+    window.__timelines["costs"] = tl;
+  </script>
+</template>

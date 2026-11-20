@@ -1,0 +1,49 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0a0a0f; color: #f5f5f5; font-family: system-ui, sans-serif; padding: 60px; }
+    h2 { font-size: 56px; color: #3b82f6; margin-bottom: 20px; opacity: 0; }
+    .subtitle { font-size: 24px; color: #a0a0a0; margin-bottom: 40px; opacity: 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1500px; }
+    .card { background: #141414; border: 1px solid #2a2a3a; border-radius: 16px; padding: 32px; opacity: 0; transform: translateY(20px); }
+    .card h3 { font-size: 24px; color: #10b981; margin-bottom: 12px; }
+    .card p { font-size: 18px; color: #a0a0a0; line-height: 1.5; }
+    .highlight { border-color: #3b82f6; background: #1a2332; }
+    .tag { display: inline-block; background: #10b981; color: #0a0a0f; padding: 4px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  </style>
+  <div data-hf-id="hf-0rjh" id="root" data-composition-id="usp" data-width="1920" data-height="1080">
+    <h2 data-hf-id="hf-oyoc">Our Unique Selling Point</h2>
+    <div data-hf-id="hf-7h13" class="subtitle">Not just local AI. Full API automation integrated with your existing systems.</div>
+    <div data-hf-id="hf-kxq8" class="grid">
+      <div data-hf-id="hf-l6z6" class="card highlight">
+        <div data-hf-id="hf-kwub" class="tag">LOCAL</div>
+        <h3 data-hf-id="hf-o8e1">100% On-Premise</h3>
+        <p data-hf-id="hf-0frz">Models run on your hardware. No data leaves your building. GDPR-compliant by design. No vendor lock-in. Full control over your data.</p>
+      </div>
+      <div data-hf-id="hf-8ixi" class="card highlight">
+        <div data-hf-id="hf-iibc" class="tag">API</div>
+        <h3 data-hf-id="hf-kefs">REST API Integration</h3>
+        <p data-hf-id="hf-945v">Connect AI to your CRM, ERP, email, calendar, and ticketing systems. Webhooks for events. No manual copy-paste.</p>
+      </div>
+      <div data-hf-id="hf-vn2y" class="card">
+        <div data-hf-id="hf-2xrb" class="tag">AUTOMATION</div>
+        <h3 data-hf-id="hf-jv10">Workflow Automation</h3>
+        <p data-hf-id="hf-qhv2">Chain AI tasks: incoming email → AI triage → auto-quote → send via email → log in CRM. Fully automated pipelines.</p>
+      </div>
+      <div data-hf-id="hf-i08u" class="card">
+        <div data-hf-id="hf-bmcm" class="tag">HYBRID</div>
+        <h3 data-hf-id="hf-zucb">Best of Both Worlds</h3>
+        <p data-hf-id="hf-fawa">Local processing for privacy + API automation for integration. Use cloud models as fallback for complex tasks. You choose.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo(".subtitle", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.6);
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((el, i) => {
+      tl.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 1.0 + i * 0.15);
+    });
+    window.__timelines["usp"] = tl;
+  </script>
+</template>
