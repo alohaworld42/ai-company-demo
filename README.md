@@ -64,3 +64,5 @@ node app/server.mjs
 
 MIT
 "
+## Videos
+`videos/lang` und `videos/kurz`: HyperFrames-Präsentationen (vorher eigene Repos). Fertige MP4s in `videos/*/renders/` (lokal, nicht in git).
