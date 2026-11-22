@@ -3,3 +3,4 @@ videos/*/renders/
 videos/*/node_modules/
 videos/*/.hyperframes/
 videos/*/.thumbnails/
+videos/*/render.log

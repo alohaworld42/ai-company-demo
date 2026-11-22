@@ -1,5 +1,6 @@
 <template>
   <style>
+    /* lesbar */
     /* vereinheitlicht */
     h1, .sub, p { text-align: center; }
     #root {
@@ -14,10 +15,10 @@
     .stats { display: flex; gap: 60px; margin-top: 60px; opacity: 0; }
     .stat { text-align: center; }
     .stat .num { font-size: 48px; font-weight: 700; color: #10b981; }
-    .stat .label { font-size: 22px; color: #a0a0a0; margin-top: 4px; }
+    .stat .label { font-size: 28px; color: #a0a0a0; margin-top: 4px; }
     .line { width: 120px; height: 4px; background: #3b82f6; margin: 30px 0; opacity: 0; transform: scaleX(0); }
   </style>
-  <div data-hf-id="hf-wt3v" id="root" data-composition-id="title" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-wt3v" id="root" data-composition-id="title" data-hold data-width="1920" data-height="1080">
     <div data-hf-id="hf-5nls" class="tag">AI-POWERED COMPANY</div>
     <h1 data-hf-id="hf-hr7a">Support<br data-hf-id="hf-x5px">Every Role</h1>
     <div data-hf-id="hf-np12" class="line"></div>
@@ -32,8 +33,8 @@
   <script>
     /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo(".tag", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0);
-    tl.fromTo("h1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.25);
+    tl.fromTo(".tag", { opacity: 1, y: 0 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0);
+    tl.fromTo("h1", { opacity: 1, y: 0 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.25);
     tl.fromTo(".line", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.5);
     tl.fromTo(".sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.65);
     tl.fromTo(".stats", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.9);

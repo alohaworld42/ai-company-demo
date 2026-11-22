@@ -1,5 +1,6 @@
 <template>
   <style>
+    /* lesbar */
     /* vereinheitlicht */
     #root { justify-content: flex-start !important; padding: 120px 140px 90px !important; }
     h2 { margin-bottom: 48px !important; }
@@ -9,11 +10,11 @@
     .tier { flex: 1; background: #141414; border: 1px solid #2a2a3a; border-radius: 16px; padding: 28px; opacity: 0; transform: translateY(20px); }
     .tier h3 { font-size: 28px; color: #10b981; margin-bottom: 8px; }
     .tier .price { font-size: 38px; font-weight: 800; color: #3b82f6; margin-bottom: 12px; }
-    .tier p { font-size: 22px; color: #a0a0a0; line-height: 1.5; }
-    .tier .model { font-size: 22px; color: #f59e0b; margin-top: 12px; font-weight: 600; }
+    .tier p { font-size: 28px; color: #a0a0a0; line-height: 1.5; }
+    .tier .model { font-size: 28px; color: #f59e0b; margin-top: 12px; font-weight: 600; }
     .tier.highlight { border-color: #3b82f6; background: #1a2332; }
   </style>
-  <div data-hf-id="hf-yez2" id="root" data-composition-id="investment" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-yez2" id="root" data-composition-id="investment" data-hold data-width="1920" data-height="1080">
     <h2 data-hf-id="hf-wxv9">Investment Spectrum</h2>
     <div data-hf-id="hf-net1" class="spectrum">
       <div data-hf-id="hf-um6c" class="tier">
@@ -21,31 +22,31 @@
         <div data-hf-id="hf-brhk" class="price">€0 - 400</div>
         <p data-hf-id="hf-400g">Use existing PC. CPU-only or entry GPU. No new hardware needed.</p>
         <div data-hf-id="hf-yoab" class="model">Models: 8B (Qwen 3, Llama 3.1)</div>
-        <p data-hf-id="hf-lfmh" style="margin-top:8px; font-size: 22px;">Good for: basic chat, FAQ, simple automation</p>
+        <p data-hf-id="hf-lfmh" style="margin-top:8px; font-size: 28px;">Good for: basic chat, FAQ, simple automation</p>
       </div>
       <div data-hf-id="hf-se0s" class="tier">
         <h3 data-hf-id="hf-0c1v">Professional</h3>
         <div data-hf-id="hf-18q2" class="price">€400 - 2,000</div>
         <p data-hf-id="hf-l6kb">RTX 4060 (8GB) or RTX 4090 (24GB). Single user, fast responses.</p>
         <div data-hf-id="hf-4uuu" class="model">Models: 8B-32B (Qwen 3, Mistral, Gemma 3)</div>
-        <p data-hf-id="hf-kbdx" style="margin-top:8px; font-size: 22px;">Good for: receptionist, HR, bookkeeper, support</p>
+        <p data-hf-id="hf-kbdx" style="margin-top:8px; font-size: 28px;">Good for: receptionist, HR, bookkeeper, support</p>
       </div>
       <div data-hf-id="hf-92wk" class="tier highlight">
         <h3 data-hf-id="hf-mesm">Business</h3>
         <div data-hf-id="hf-a40x" class="price">€2,000 - 5,000</div>
         <p data-hf-id="hf-45rd">RTX PRO 6000 (96GB) or 2x RTX 4090. Multi-role, 70B+ models.</p>
         <div data-hf-id="hf-oxaj" class="model">Models: 32B-70B (Llama 3.3, DeepSeek R1)</div>
-        <p data-hf-id="hf-w2jh" style="margin-top:8px; font-size: 22px;">Good for: all 8 roles, complex reasoning, legal review</p>
+        <p data-hf-id="hf-w2jh" style="margin-top:8px; font-size: 28px;">Good for: all 8 roles, complex reasoning, legal review</p>
       </div>
       <div data-hf-id="hf-r73p" class="tier">
         <h3 data-hf-id="hf-7pir">Enterprise</h3>
         <div data-hf-id="hf-185z" class="price">€30,000+</div>
         <p data-hf-id="hf-o52u">Dedicated server with RTX PRO 6000 (96GB). Multi-user, 24/7, high throughput.</p>
         <div data-hf-id="hf-ygwu" class="model">Models: 70B+ (all models, fine-tuned)</div>
-        <p data-hf-id="hf-rr1o" style="margin-top:8px; font-size: 22px;">Good for: entire company, 50+ employees, custom fine-tuning</p>
+        <p data-hf-id="hf-rr1o" style="margin-top:8px; font-size: 28px;">Good for: entire company, 50+ employees, custom fine-tuning</p>
       </div>
     </div>
-    <p data-hf-id="hf-h44u" style="margin-top:30px; font-size: 26px; color:#a0a0a0;">Every tier: 100% local. 100% private. API costs: EUR0 (local). Total cost: amortized hardware + power + prompting time (see cost table).</p>
+    <p data-hf-id="hf-h44u" style="margin-top:30px; font-size: 28px; color:#a0a0a0;">Every tier: 100% local. 100% private. API costs: EUR0 (local). Total cost: amortized hardware + power + prompting time (see cost table).</p>
   </div>
   <script>
     /* tempo */
