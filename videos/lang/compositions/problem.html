@@ -1,18 +1,21 @@
 <template>
   <style>
+    /* vereinheitlicht */
+    #root { justify-content: flex-start !important; padding: 120px 140px 90px !important; }
+    h2 { margin-bottom: 48px !important; }
     #root { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0a0a0f; color: #f5f5f5; font-family: system-ui, sans-serif; padding: 80px; }
     h2 { font-size: 64px; font-weight: 700; color: #3b82f6; margin-bottom: 40px; opacity: 0; }
     .big { font-size: 120px; font-weight: 800; color: #ef4444; margin: 20px 0; opacity: 0; transform: scale(0.8); }
-    .sub { font-size: 28px; color: #a0a0a0; max-width: 1200px; text-align: center; opacity: 0; }
-    ul { list-style: none; margin-top: 40px; max-width: 1000px; }
-    li { font-size: 24px; padding: 12px 0; padding-left: 32px; position: relative; opacity: 0; transform: translateX(-20px); }
+    .sub { font-size: 34px; color: #a0a0a0; max-width: 1640px; text-align: center; opacity: 0; }
+    ul { list-style: none; margin-top: 40px; max-width: 1640px; }
+    li { font-size: 30px; padding: 12px 0; padding-left: 32px; position: relative; opacity: 0; transform: translateX(-20px); }
     li::before { content: "→"; position: absolute; left: 0; color: #ef4444; font-weight: 700; }
     .highlight { color: #10b981; font-weight: 700; }
   </style>
   <div data-hf-id="hf-rs66" id="root" data-composition-id="problem" data-width="1920" data-height="1080">
     <h2 data-hf-id="hf-cmxh">The Problem</h2>
     <div data-hf-id="hf-3dg1" class="big">115 hrs/week</div>
-    <div data-hf-id="hf-jqzr" class="sub">of automatable work across 5 roles in a typical SME</div>
+    <div data-hf-id="hf-jqzr" class="sub">estimated automatable work across 5 roles in a typical SME</div>
     <ul data-hf-id="hf-ovcc">
       <li data-hf-id="hf-et7f">Receptionist: greeting, scheduling, FAQ — 40h/week</li>
       <li data-hf-id="hf-0stv">HR Assistant: resume screening, onboarding — 20h/week</li>
@@ -20,7 +23,7 @@
       <li data-hf-id="hf-pf6r">Customer Support: ticket triage, FAQ — 30h/week</li>
       <li data-hf-id="hf-48sd">Quote Generator: reading requests, creating estimates — 10h/week</li>
     </ul>
-    <p data-hf-id="hf-2ons" style="margin-top:30px; font-size:24px; color:#a0a0a0;">Personnel costs: <span data-hf-id="hf-pnyq" class="highlight">60-70%</span> of revenue for SMEs</p>
+    <p data-hf-id="hf-2ons" style="margin-top:30px; font-size: 30px; color:#a0a0a0;">Personnel costs: <span data-hf-id="hf-pnyq" class="highlight">60-70%</span> of revenue for SMEs</p>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
