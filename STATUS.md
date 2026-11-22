@@ -32,3 +32,4 @@ Akquise: Präsentation an potenzielle Kunden zeigen, Demo vorführen.
 - `videos/kurz` + `videos/lang` vereinheitlicht (`node videos/vereinheitlichen.mjs`): Schrift ≥22 px, Überschriften gleiche Höhe, volle Breite; Kostenzahlen als Beispielrechnung gekennzeichnet, „ersetzt 1 FTE“/„Break-even < 1 Monat“ entfernt, Llama 3.1 8B korrigiert.
 - Aktuelle Renders: `videos/kurz/renders/praesentation-kurz.mp4`, `videos/lang/renders/praesentation-lang.mp4` (ältere Renders mit den alten Behauptungen liegen in `renders/_veraltet/` – nicht verschicken).
 - Szenenwechsel ohne Leerlauf: Einblendungen halbiert (`node videos/tempo.mjs`), Überschriften bzw. Panels ab Bild 0. Abnahme 2026-11-22: jede Szene beider Renders bei +0,2 s und in der Mitte geprüft.
+- Abnahme 2026-11-22 (final): jedes Frame aller 23 Videos maschinell geprüft (jd-lancing: 22.050 Frames, 0 leer), Präsentationen im Sekundenraster und jeder Szenenwechsel in 0,1-s-Schritten angesehen.

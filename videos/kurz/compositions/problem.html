@@ -23,7 +23,7 @@
       <li data-hf-id="hf-pf6r">Customer Support: ticket triage, FAQ — 30h/week</li>
       <li data-hf-id="hf-48sd">Quote Generator: reading requests, creating estimates — 10h/week</li>
     </ul>
-    <p data-hf-id="hf-2ons" style="margin-top:30px; font-size: 30px; color:#a0a0a0;">Personnel costs: <span data-hf-id="hf-pnyq" class="highlight">60-70%</span> of revenue for SMEs</p>
+    <p data-hf-id="hf-2ons" class="fuss" style="margin-top:30px; font-size: 30px; color:#a0a0a0; opacity:0;">Personnel costs: <span data-hf-id="hf-pnyq" class="highlight">60-70%</span> of revenue for SMEs</p>
   </div>
   <script>
     /* tempo */
@@ -35,6 +35,7 @@
     items.forEach((el, i) => {
       tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.6 + i * 0.09);
     });
+    tl.fromTo(".fuss", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.3);
     window.__timelines["problem"] = tl;
   </script>
 </template>
