@@ -26,13 +26,14 @@
     <p data-hf-id="hf-2ons" style="margin-top:30px; font-size: 30px; color:#a0a0a0;">Personnel costs: <span data-hf-id="hf-pnyq" class="highlight">60-70%</span> of revenue for SMEs</p>
   </div>
   <script>
+    /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
-    tl.fromTo(".big", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.4)" }, 0.5);
-    tl.fromTo(".sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.9);
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
+    tl.fromTo(".big", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.4)" }, 0.25);
+    tl.fromTo(".sub", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.45);
     const items = document.querySelectorAll("li");
     items.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 1.2 + i * 0.15);
+      tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.6 + i * 0.09);
     });
     window.__timelines["problem"] = tl;
   </script>

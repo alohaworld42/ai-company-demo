@@ -22,13 +22,14 @@
     <div data-hf-id="hf-nj7w" class="highlight">Next step: pick one role for a pilot.</div>
   </div>
   <script>
+    /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
     const items = document.querySelectorAll("li");
     items.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.6 + i * 0.15);
+      tl.fromTo(el, { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 0.3 + i * 0.09);
     });
-    tl.fromTo(".highlight", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.5);
+    tl.fromTo(".highlight", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.75);
     window.__timelines["cta"] = tl;
   </script>
 </template>

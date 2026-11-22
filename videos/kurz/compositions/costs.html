@@ -28,13 +28,14 @@
     <div data-hf-id="hf-9b9t" class="note">*Example calculation with assumed salaries and hardware – your numbers come from the pilot.</div>
   </div>
   <script>
+    /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
     const rows = document.querySelectorAll("tr");
     rows.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.6 + i * 0.15);
+      tl.fromTo(el, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.3 + i * 0.09);
     });
-    tl.fromTo(".note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 2.0);
+    tl.fromTo(".note", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 1);
     window.__timelines["costs"] = tl;
   </script>
 </template>

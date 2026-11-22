@@ -48,18 +48,19 @@
     </div>
   </div>
   <script>
+    /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
-    tl.fromTo(".demo", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.4);
-    tl.fromTo(".info", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 0.4);
-    tl.fromTo(".request", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.8);
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
+    tl.fromTo(".demo", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 0);
+    tl.fromTo(".info", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 0);
+    tl.fromTo(".request", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.4);
     const rows = document.querySelectorAll("tr");
     rows.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, y: 5 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, 1.2 + i * 0.1);
+      tl.fromTo(el, { opacity: 0, y: 5 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, 0.6 + i * 0.06);
     });
     const items = document.querySelectorAll(".info li");
     items.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, x: 10 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, 1.8 + i * 0.1);
+      tl.fromTo(el, { opacity: 0, x: 10 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, 0.9 + i * 0.06);
     });
     window.__timelines["quote"] = tl;
   </script>

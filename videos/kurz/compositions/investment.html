@@ -48,13 +48,14 @@
     <p data-hf-id="hf-h44u" style="margin-top:30px; font-size: 26px; color:#a0a0a0;">Every tier: 100% local. 100% private. API costs: EUR0 (local). Total cost: amortized hardware + power + prompting time (see cost table).</p>
   </div>
   <script>
+    /* tempo */
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+    tl.fromTo("h2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0);
     const tiers = document.querySelectorAll(".tier");
     tiers.forEach((el, i) => {
-      tl.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.6 + i * 0.15);
+      tl.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.3 + i * 0.09);
     });
-    tl.fromTo("p:last-of-type", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 1.8);
+    tl.fromTo("p:last-of-type", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.9);
     window.__timelines["investment"] = tl;
   </script>
 </template>
